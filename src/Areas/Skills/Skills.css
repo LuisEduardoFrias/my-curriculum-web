@@ -1,0 +1,18 @@
+.mouseAnimation{
+    display:flex;
+    flex-Direction:column;
+    justify-Content:center;
+    align-Items:center;
+    cursor: pointer;
+    border:1px solid lightgray;
+    width:300px;
+    height:200px;
+    border-Radius:10px 10px;
+    background: linear-gradient(rgb(228, 228, 228), rgb(204, 204, 204));
+    box-shadow: 2px 2px 1px 0px rgb(168, 168, 168);
+    
+}
+
+.mouseAnimation:hover{
+    background: linear-gradient(rgb(116, 225, 255), rgb(0, 153, 195));
+}

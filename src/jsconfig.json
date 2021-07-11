@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "Assests/*": ["./assests/*"], 
+      }
+    },
+    "include": ["**/*"],
+    "exclude": ["node_modules"]
+}

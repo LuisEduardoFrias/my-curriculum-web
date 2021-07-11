@@ -1,0 +1,12 @@
+.p-fieldset .p-fieldset-content
+{
+    padding: 0px;
+
+}
+
+.label{
+    display:flex;
+    font-weight: bold;
+    justify-content:center;
+
+}
