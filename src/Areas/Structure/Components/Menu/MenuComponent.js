@@ -50,6 +50,12 @@ export default function MenuComponent()
                     <h2 style={h2}>Refetencias</h2>
                 </Button>
             </Link>
+
+            <Link style={{position:'absolute', right:'10px', textDecoration: 'none',}} to='/settings' >
+                <Button icon="pi pi-cog" className="p-button-rounded p-button-secondary" >
+                   
+                </Button>
+            </Link>
         </>
     )
 }

@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ScrollPanel } from 'primereact/scrollpanel';
 
@@ -8,6 +9,9 @@ import WorkExperiencePage from '../../../WorkExperience/Pages/WorkExperiencePage
 import ReferencesPage from '../../../References/Pages/ReferencesPage';
 import PersonalProjectPage from '../../../PersonalProject/Pages/PersonalProjectPage';
 import MenuComponent from '../Menu/MenuComponent';
+import SettingsPage from '../../../Settings/Pages/SettingsPage.js';
+
+import MemoryContext, { Memory } from '../../../../Share_Context/MemoryContext.js';
 
 export default function AppComponent() 
 {
@@ -73,31 +77,31 @@ export default function AppComponent()
   }
 
   return (
-    <Router>
-      <div style={containerStyle}>
+    <MemoryContext.Provider value={Memory} >
+      <Router>
+        <div style={containerStyle}>
 
-        <div style={headerStyle}>{<PersonalInformationComponent />}</div>
+          <div style={headerStyle}>{<PersonalInformationComponent />}</div>
 
-        <div style={bodyStyle}>
+          <div style={bodyStyle}>
 
-          <div style={menuStyle}> <MenuComponent /> </div>
+            <div style={menuStyle}> <MenuComponent /> </div>
 
-          <div style={routerStyle}>
-            <ScrollPanel style={{ width: '100%', height: '100%', }} className="custombar1">
-              <Switch>
-                <Route exact path='/education' component={EducationPage} />
-                <Route exact path='/personal-project' component={PersonalProjectPage} />
-                <Route exact path='/references' component={ReferencesPage} />
-                <Route exact path='/skills' component={SkillsPage} />
-                <Route exact path='/work-experience' component={WorkExperiencePage} />
-              </Switch>
-            </ScrollPanel>   
+            <div style={routerStyle}>
+              <ScrollPanel style={{ width: '100%', height: '100%', }} className="custombar1">
+                <Switch>
+                  <Route exact path='/education' component={EducationPage} />
+                  <Route exact path='/personal-project' component={PersonalProjectPage} />
+                  <Route exact path='/references' component={ReferencesPage} />
+                  <Route exact path='/skills' component={SkillsPage} />
+                  <Route exact path='/work-experience' component={WorkExperiencePage} />
+                  <Route exact path='/settings' component={SettingsPage} />
+                </Switch>
+              </ScrollPanel>   
+            </div>
           </div>
-
         </div>
-        
-      </div>
-    </Router>
+      </Router>
+    </MemoryContext.Provider>
   );
-
 }

@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 const PersonalProjectComponent = memo(({projectName,projectDescription,projectData,
-    technologies,utl, imgs}) => 
+    technologies,urls, imgs}) => 
 {
     return (
         <div>
@@ -38,7 +38,11 @@ const PersonalProjectComponent = memo(({projectName,projectDescription,projectDa
 
             </div>
             
-            {utl && <div><span>Repositorio</span> <a href={utl} >{utl}</a></div>}
+            {urls &&  <div style={{margin:'30px 0px 10px 0px', padding:'10px 10px 10px 10px', border:'1px solid lightgray'}}>
+                {console.log("sada")}
+                { urls.map((u, index) => <div key={index}> <span>Repositorio : </span><a href={u.url} >{u.url}</a> </div> )}
+
+            </div>}
 
             {imgs &&  <div style={{margin:'30px 0px 10px 0px', padding:'10px 10px 10px 10px', border:'1px solid lightgray'}}>
                 
@@ -63,8 +67,8 @@ PersonalProjectComponent.propTypes = {
     projectDescription: PropTypes.string.isRequired,
     projectData: PropTypes.string.isRequired,
     technologies: PropTypes.array.isRequired,
-    utl: PropTypes.string,
-    imgs: PropTypes.string,
+    urls: PropTypes.array,
+    imgs: PropTypes.array,
 
 }
 

@@ -1,17 +1,19 @@
-﻿import React from 'react'
-import PropTypes from 'prop-types'
+﻿import React, { useContext } from 'react'
 import ReferenceComponent from '../Components/Reference/ReferenceComponent'
 
-const ReferencesPage = props => {
+//import References from '../../../assets/files/References.json';
+
+import MemoryContext from '../../../Share_Context/MemoryContext.js';
+
+export default function ReferencesPage()
+{
+    const context = useContext(MemoryContext)
+
     return (
         <div>
-            <ReferenceComponent />
+            <ReferenceComponent chips={context.References} />
         </div>
     )
 }
 
-ReferencesPage.propTypes = {
 
-}
-
-export default ReferencesPage

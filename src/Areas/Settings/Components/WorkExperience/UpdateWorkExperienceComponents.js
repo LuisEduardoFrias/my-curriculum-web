@@ -5,12 +5,12 @@ import MemoryContext from '../../../../Share_Context/MemoryContext.js';
 
 import '../../settings.css';
 
-export const UpdateSkillsComponents = memo(({json}) => 
+export const UpdateWorkExperienceComponents = memo(({json}) => 
 {
     const context = useContext(MemoryContext)
 
     const handle = (e) => {
-        context.Skills = e.jsObject;
+        context.WorkExperience = e.jsObject;
     }
 
     return (    
