@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { ScrollPanel } from 'primereact/scrollpanel';
-import Credential from  "../../../assets/files/Credential.json";
+//import Credential from  "../../../assets/files/Credential.json";
 
 import { LoginComponent } from '../Components/Login/LoginComponent';
 import { UpdateEducationComponents } from '../Components/Education/UpdateEducationComponents';
@@ -32,7 +32,7 @@ export default function SettingsPage()
     }
 
     if(login === false)
-        return ( <LoginComponent  Credential={Credential} loginState={loginState} />)
+        return ( <LoginComponent  Credential={context.Credential} loginState={loginState} />)
     else
         return (
             <ScrollPanel style={{ width: '100%', height: '100%', }} className="custombar1">
